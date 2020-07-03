@@ -5,4 +5,12 @@ class User < ApplicationRecord
     validates :username, uniqueness: { case_sensitive: false }
     # has_many :messages
     # has_many :remarks
+    before_save :avatar_check
+
+    def avatar_check
+        unless self.avatar
+            self.avatar = '../assets/default-avatar.png'
+        end
+    end
+
 end

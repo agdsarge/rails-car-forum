@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_175534) do
     t.text "body"
     t.string "picture"
     t.bigint "user_id", null: false
+    t.string "subject"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_175534) do
     t.string "password_digest"
     t.string "bio"
     t.integer "zip"
+    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
