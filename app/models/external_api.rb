@@ -1,5 +1,5 @@
 require 'unirest'
-class Api
+class ExternalApi
     #API.vin_lookup
 
     def self.vin_lookup(vin="WBAYA6C58DD143543")
@@ -13,7 +13,7 @@ class Api
         #         "X-AUTH-TOKEN" => "96a7cbbc2886caae4f5a51174d5fb0ae"
         #             })
 
-        
+
         response = Unirest.get "https://vinhub.p.rapidapi.com/auction/WBAYA6C58DD143543/run",
         headers:{
             "X-RapidAPI-Host" => "vinhub.p.rapidapi.com",
