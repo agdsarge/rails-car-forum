@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     end
 
     def show
-        render json: Post.find(params[:id]).to_json(include: [{user: {only: [:username, :bio, :avatar] }}, {comments: {include: {user: {only: [:username, :bio, :avatar] }}}}])
+        render json: specific_post.to_json(include: [{user: {only: [:username, :bio, :avatar] }}, {comments: {include: {user: {only: [:username, :bio, :avatar] }}}}])
     end
 
     def create #WORKS
