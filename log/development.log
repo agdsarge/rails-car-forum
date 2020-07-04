@@ -1846,3 +1846,402 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3871)
 
 
+Started GET "/posts/3" for ::1 at 2020-07-03 15:33:31 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 555ms (Views: 0.7ms | ActiveRecord: 12.4ms | Allocations: 21933)
+
+
+Started GET "/" for ::1 at 2020-07-03 22:13:36 -0400
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 33.6ms | Allocations: 315)
+Completed 200 OK in 87ms (Views: 57.1ms | ActiveRecord: 0.0ms | Allocations: 1596)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-07-03 22:13:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/posts" for ::1 at 2020-07-03 22:13:42 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (41.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 222ms (Views: 0.5ms | ActiveRecord: 62.9ms | Allocations: 21308)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 22:20:14 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 3981)
+
+
+Started POST "/posts" for ::1 at 2020-07-03 22:20:45 -0400
+Processing by PostsController#create as JSON
+  Parameters: {"subject"=>"this is a new car. test post.", "body"=>"what a wondrous vehicle", "picture"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wienermobile_OURDOG_plate.jpg/1024px-Wienermobile_OURDOG_plate.jpg", "user_id"=>4, "post"=>{"body"=>"what a wondrous vehicle", "picture"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wienermobile_OURDOG_plate.jpg/1024px-Wienermobile_OURDOG_plate.jpg", "user_id"=>4, "subject"=>"this is a new car. test post."}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("body", "picture", "user_id", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "what a wondrous vehicle"], ["picture", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wienermobile_OURDOG_plate.jpg/1024px-Wienermobile_OURDOG_plate.jpg"], ["user_id", 4], ["subject", "this is a new car. test post."], ["created_at", "2020-07-04 02:20:45.174647"], ["updated_at", "2020-07-04 02:20:45.174647"]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Post (0.42ms)
+Completed 200 OK in 131ms (Views: 94.4ms | ActiveRecord: 25.6ms | Allocations: 6132)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 22:20:51 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 4847)
+
+
+Started PUT "/posts" for ::1 at 2020-07-03 22:22:56 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/posts"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/posts/4" for ::1 at 2020-07-03 22:23:28 -0400
+  
+NoMethodError (undefined method `stringify' for JSON:Module):
+  
+app/controllers/posts_controller.rb:61:in `<main>'
+Started GET "/posts" for ::1 at 2020-07-03 22:31:13 -0400
+  
+NoMethodError (undefined method `stringify' for JSON:Module):
+  
+app/controllers/posts_controller.rb:61:in `<main>'
+Started GET "/posts/4" for ::1 at 2020-07-03 22:31:22 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (63.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 385ms (Views: 0.4ms | ActiveRecord: 88.4ms | Allocations: 19278)
+
+
+Started PUT "/posts/4" for ::1 at 2020-07-03 22:32:17 -0400
+Processing by PostsController#update as JSON
+  Parameters: {"subject"=>"this is a new car. test post.", "body"=>"[EDITED]", "picture"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wienermobile_OURDOG_plate.jpg/1024px-Wienermobile_OURDOG_plate.jpg", "user_id"=>4, "id"=>"4", "post"=>{"body"=>"[EDITED]", "picture"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wienermobile_OURDOG_plate.jpg/1024px-Wienermobile_OURDOG_plate.jpg", "user_id"=>4, "subject"=>"this is a new car. test post."}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:37:in `specific_post'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "[EDITED]"], ["updated_at", "2020-07-04 02:32:17.334106"], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 12.8ms | Allocations: 5060)
+
+
+  
+NoMethodError (undefined method `valid?' for true:TrueClass):
+  
+app/controllers/posts_controller.rb:20:in `update'
+Started PUT "/posts/4" for ::1 at 2020-07-03 22:33:56 -0400
+  
+NoMethodError (undefined method `stringify' for JSON:Module):
+  
+app/controllers/posts_controller.rb:61:in `<main>'
+Started POST "/posts/" for ::1 at 2020-07-03 22:34:51 -0400
+Processing by PostsController#create as JSON
+  Parameters: {"subject"=>"test2", "user_id"=>4, "body"=>"test of the body and JSON.stringify", "picture"=>"https://static1.cbrimages.com/wordpress/wp-content/uploads/2017/03/speed-racer.jpg", "post"=>{"body"=>"test of the body and JSON.stringify", "picture"=>"https://static1.cbrimages.com/wordpress/wp-content/uploads/2017/03/speed-racer.jpg", "user_id"=>4, "subject"=>"test2"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("body", "picture", "user_id", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "test of the body and JSON.stringify"], ["picture", "https://static1.cbrimages.com/wordpress/wp-content/uploads/2017/03/speed-racer.jpg"], ["user_id", 4], ["subject", "test2"], ["created_at", "2020-07-04 02:34:51.780412"], ["updated_at", "2020-07-04 02:34:51.780412"]]
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+  [1m[35m (119.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Post (0.34ms)
+Completed 200 OK in 182ms (Views: 1.3ms | ActiveRecord: 128.6ms | Allocations: 17281)
+
+
+Started GET "/posts/5" for ::1 at 2020-07-03 22:34:56 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 4.6ms | Allocations: 3922)
+
+
+Started PUT "/posts/5" for ::1 at 2020-07-03 22:35:54 -0400
+Processing by PostsController#update as JSON
+  Parameters: {"body"=>"test of the body and JSON.stringify [EDIT]", "id"=>"5", "post"=>{"body"=>"test of the body and JSON.stringify [EDIT]"}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:37:in `specific_post'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "test of the body and JSON.stringify [EDIT]"], ["updated_at", "2020-07-04 02:35:54.654054"], ["id", 5]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 41.4ms | Allocations: 4903)
+
+
+  
+NoMethodError (undefined method `valid?' for true:TrueClass):
+  
+app/controllers/posts_controller.rb:20:in `update'
+Started GET "/posts/5" for ::1 at 2020-07-03 22:38:33 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `stringify' for JSON:Module):
+  
+app/controllers/posts_controller.rb:56:in `<main>'
+Started GET "/posts/5" for ::1 at 2020-07-03 22:38:58 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (21.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 364ms (Views: 0.5ms | ActiveRecord: 34.1ms | Allocations: 22077)
+
+
+Started PUT "/posts/5" for ::1 at 2020-07-03 22:39:05 -0400
+Processing by PostsController#update as JSON
+  Parameters: {"body"=>"test of the body and JSON.stringify [EDIT]", "id"=>"5", "post"=>{"body"=>"test of the body and JSON.stringify [EDIT]"}}
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:32:in `specific_post'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.8ms | Allocations: 4300)
+
+
+  
+NoMethodError (undefined method `save' for true:TrueClass):
+  
+app/controllers/posts_controller.rb:20:in `update'
+Started PUT "/posts/5" for ::1 at 2020-07-03 22:39:23 -0400
+Processing by PostsController#update as JSON
+  Parameters: {"body"=>"test of the body and JSON.stringify [EDIT]", "id"=>"5", "post"=>{"body"=>"test of the body and JSON.stringify [EDIT]"}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:33:in `specific_post'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:33:in `specific_post'
+Completed 500 Internal Server Error in 62266ms (ActiveRecord: 7.8ms | Allocations: 175793)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update'
+app/controllers/posts_controller.rb:21:in `update'
+Started GET "/posts/5" for ::1 at 2020-07-03 22:42:00 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 279ms (Views: 0.6ms | ActiveRecord: 11.4ms | Allocations: 21987)
+
+
+Started PUT "/posts/5" for ::1 at 2020-07-03 22:42:18 -0400
+Processing by PostsController#update as JSON
+  Parameters: {"body"=>"THIS IS MY SECOND TEST]", "id"=>"5", "post"=>{"body"=>"THIS IS MY SECOND TEST]"}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:32:in `specific_post'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "THIS IS MY SECOND TEST]"], ["updated_at", "2020-07-04 02:42:18.201584"], ["id", 5]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (43.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 81ms (Views: 27.6ms | ActiveRecord: 44.5ms | Allocations: 5028)
+
+
+Started GET "/posts/5" for ::1 at 2020-07-03 22:42:21 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 2553)
+
+
+Started DELETE "/posts/5" for ::1 at 2020-07-03 22:43:30 -0400
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"5", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:32:in `specific_post'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:25:in `destroy'
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/posts_controller.rb:25:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:25:in `destroy'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 7287)
+
+
+Started GET "/posts/" for ::1 at 2020-07-03 22:43:38 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 4850)
+
+
+Started DELETE "/posts/4" for ::1 at 2020-07-03 22:43:45 -0400
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"4", "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:32:in `specific_post'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:25:in `destroy'
+  [1m[36mPost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/posts_controller.rb:25:in `destroy'
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:25:in `destroy'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 42.3ms | Allocations: 6262)
+
+
+Started GET "/posts/" for ::1 at 2020-07-03 22:43:46 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 3850)
+
+
