@@ -2245,3 +2245,339 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 3850)
 
 
+Started GET "/" for ::1 at 2020-07-06 09:59:10 -0400
+  [1m[35m (129.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 86.5ms | Allocations: 315)
+Completed 200 OK in 260ms (Views: 190.2ms | ActiveRecord: 0.0ms | Allocations: 1596)
+
+
+Started GET "/posts" for ::1 at 2020-07-06 09:59:17 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (76.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (40.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 573ms (Views: 0.5ms | ActiveRecord: 176.7ms | Allocations: 21294)
+
+
+Started GET "/posts" for ::1 at 2020-07-06 10:01:35 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 13.3ms | Allocations: 3872)
+
+
+Started GET "/comments" for ::1 at 2020-07-06 10:02:21 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:3:in `index'
+No serializer found for resource: #<Comment id: 1, body: "You're very strange, Paul.", picture: nil, user_id: 2, post_id: 1, created_at: "2020-07-03 18:30:48", updated_at: "2020-07-03 18:30:48">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Comment::ActiveRecord_Relation (2.84ms)
+Completed 200 OK in 113ms (Views: 65.5ms | ActiveRecord: 14.2ms | Allocations: 7289)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:04:06 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/v1/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/v1/auth_controller.rb:1:in `<main>'
+Started GET "/users" for ::1 at 2020-07-06 10:07:49 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.42ms)
+Completed 200 OK in 606ms (Views: 605.6ms | ActiveRecord: 0.4ms | Allocations: 2733)
+
+
+Started POST "/users" for ::1 at 2020-07-06 10:10:39 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-07-06 10:11:40 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"princess.peach", "first_name"=>"Princess", "last_name"=>"Peach", "email"=>"pp@mario.com", "zip"=>"23185", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"Princess", "last_name"=>"Peach", "username"=>"princess.peach", "email"=>"pp@mario.com", "password_digest"=>"[FILTERED]", "zip"=>"23185"}}
+Completed 500 Internal Server Error in 366ms (ActiveRecord: 2.8ms | Allocations: 73260)
+
+
+  
+NameError (undefined local variable or method `post_params' for #<UsersController:0x00007fa615e71928>
+Did you mean?  post_path):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for ::1 at 2020-07-06 10:12:18 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"princess.peach", "first_name"=>"Princess", "last_name"=>"Peach", "email"=>"pp@mario.com", "zip"=>"23185", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"Princess", "last_name"=>"Peach", "username"=>"princess.peach", "email"=>"pp@mario.com", "password_digest"=>"[FILTERED]", "zip"=>"23185"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 2219ms (Views: 20.2ms | ActiveRecord: 8.9ms | Allocations: 204314)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:12:27 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.34ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 1712)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:12:30 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.64ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 1679)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:12:31 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:12:36 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:13:02 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1679)
+
+
+Started POST "/users" for ::1 at 2020-07-06 10:13:55 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"mariomario", "first_name"=>"mario", "last_name"=>"mario", "email"=>"mm@mushroom.com", "zip"=>"12345", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"mario", "last_name"=>"mario", "username"=>"mariomario", "email"=>"mm@mushroom.com", "password_digest"=>"[FILTERED]", "zip"=>"12345"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "mariomario"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (18.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "mario"], ["last_name", "mario"], ["username", "mariomario"], ["email", "mm@mushroom.com"], ["password_digest", "password"], ["zip", 12345], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-06 14:13:55.549408"], ["updated_at", "2020-07-06 14:13:55.549408"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 90ms (Views: 23.7ms | ActiveRecord: 30.7ms | Allocations: 11143)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:14:02 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 1855)
+
+
+Started POST "/api/v1/profile" for ::1 at 2020-07-06 10:18:58 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/profile"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:26:24 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/v1/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/v1/auth_controller.rb:1:in `<main>'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:27:41 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/v1/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/v1/auth_controller.rb:1:in `<main>'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:28:40 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]"}}
+Completed 400 Bad Request in 150ms (ActiveRecord: 0.0ms | Allocations: 1632)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/auth_controller.rb:16:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:4:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:29:44 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 50918ms (ActiveRecord: 0.0ms | Allocations: 47199)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:30:48 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]"}}
+Completed 400 Bad Request in 89ms (ActiveRecord: 0.0ms | Allocations: 395828)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/auth_controller.rb:17:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:32:20 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 33917ms (ActiveRecord: 0.0ms | Allocations: 29280)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:32:56 -0400
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:32:57 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]"}}
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (24.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "p.nicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+  [1m[36mUser Load (133.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "p.nicholsen"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 398ms (Views: 129.4ms | ActiveRecord: 85.2ms | Allocations: 2263317)
+
+
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.88ms)
+Completed 401 Unauthorized in 207ms (Views: 20.8ms | ActiveRecord: 134.3ms | Allocations: 819496)
+
+
+Started POST "/users" for ::1 at 2020-07-06 10:33:49 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"princess.peach", "first_name"=>"Princess", "last_name"=>"Peach", "email"=>"pp@mario.com", "zip"=>"23185", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"Princess", "last_name"=>"Peach", "username"=>"princess.peach", "email"=>"pp@mario.com", "password_digest"=>"[FILTERED]", "zip"=>"23185"}}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (44.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Princess"], ["last_name", "Peach"], ["username", "princess.peach"], ["email", "pp@mario.com"], ["password_digest", "password"], ["zip", 23185], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-06 14:33:50.166224"], ["updated_at", "2020-07-06 14:33:50.166224"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.22ms)
+Completed 200 OK in 505ms (Views: 111.3ms | ActiveRecord: 58.9ms | Allocations: 2632048)
+
+
+Started GET "/users" for ::1 at 2020-07-06 10:33:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (56.2ms)
+Completed 200 OK in 122ms (Views: 115.7ms | ActiveRecord: 1.2ms | Allocations: 980976)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:34:10 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"princess.peach", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"princess.peach", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.4ms | Allocations: 230339)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:35:00 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"princess.peach", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"princess.peach", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 30.1ms | Allocations: 2255281)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-06 10:35:33 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"princess.peach", "password_digest"=>"[FILTERED]", "auth"=>{"username"=>"princess.peach", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+Completed 500 Internal Server Error in 448835ms (ActiveRecord: 5.0ms | Allocations: 571563)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
