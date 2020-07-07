@@ -3128,3 +3128,286 @@ Migrating to CreateRemarks (20200707035405)
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "remarks"."body" FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "remarks"."body" FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 3]]
+Started GET "/messages/2" for ::1 at 2020-07-07 09:45:35 -0400
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/messages/2"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/messages/2" for ::1 at 2020-07-07 09:46:08 -0400
+  
+ActionController::RoutingError (uninitialized constant MessagesController
+Did you mean?  MessageController):
+  
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/messages/2" for ::1 at 2020-07-07 09:46:40 -0400
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MessagesController):
+  
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/messages/2" for ::1 at 2020-07-07 09:46:54 -0400
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:8:in `specific_message'
+  [1m[36mUser Load (42.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 418ms (ActiveRecord: 106.0ms | Allocations: 20775)
+
+
+  
+NoMethodError (undefined method `remark' for #<Message id: 2, user_id: 8, friend_id: 10>
+Did you mean?  remarks
+               remarks=):
+  
+app/controllers/messages_controller.rb:4:in `show'
+Started GET "/messages/2" for ::1 at 2020-07-07 09:47:11 -0400
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:8:in `specific_message'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `show'
+  [1m[36mRemark Load (13.8ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:4:in `show'
+Completed 200 OK in 206ms (Views: 2.6ms | ActiveRecord: 78.4ms | Allocations: 21355)
+
+
+Started GET "/messages/2" for ::1 at 2020-07-07 09:47:32 -0400
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:8:in `specific_message'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `show'
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `show'
+  [1m[36mRemark Load (0.7ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:4:in `show'
+Completed 200 OK in 115ms (Views: 1.0ms | ActiveRecord: 52.8ms | Allocations: 21488)
+
+
+Started GET "/messages/2" for ::1 at 2020-07-07 10:05:19 -0400
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 104)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/messages_controller.rb:15:in `show'
+Started GET "/messages/2" for ::1 at 2020-07-07 10:05:30 -0400
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:31:in `specific_message'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19:in `show'
+  [1m[36mRemark Load (0.6ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:19:in `show'
+Completed 200 OK in 281ms (Views: 1.2ms | ActiveRecord: 136.9ms | Allocations: 21710)
+
+
+Started GET "/messages/2" for ::1 at 2020-07-07 10:09:48 -0400
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (5.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:32:in `specific_message'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:20:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:20:in `show'
+  [1m[36mRemark Load (0.4ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:20:in `show'
+Completed 200 OK in 199ms (Views: 1.8ms | ActiveRecord: 35.1ms | Allocations: 21510)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 10:13:52 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>10, "z"=>8, "message"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 1.6ms | Allocations: 105)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/messages_controller.rb:3:in `search'
+Started POST "/messages/new" for ::1 at 2020-07-07 10:14:40 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>10, "z"=>8, "message"=>{}}
+Completed 500 Internal Server Error in 130276ms (ActiveRecord: 2.8ms | Allocations: 47504)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `search'
+app/controllers/messages_controller.rb:14:in `search'
+Started POST "/messages/new" for ::1 at 2020-07-07 10:18:09 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>10, "z"=>8, "message"=>{}}
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" IS NULL AND "messages"."friend_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5:in `search'
+  [1m[36mCACHE Message Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" IS NULL AND "messages"."friend_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:6:in `search'
+Completed 500 Internal Server Error in 858ms (ActiveRecord: 6.0ms | Allocations: 5449552)
+
+
+  
+NoMethodError (undefined method `json' for #<MessagesController:0x00007fae265fa330>
+Did you mean?  JSON):
+  
+app/controllers/messages_controller.rb:12:in `search'
+Started POST "/messages/new" for ::1 at 2020-07-07 10:18:45 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>10, "z"=>8, "message"=>{}}
+  [1m[36mMessage Load (1.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" IS NULL AND "messages"."friend_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5:in `search'
+  [1m[36mCACHE Message Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" IS NULL AND "messages"."friend_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:6:in `search'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.18ms)
+Completed 200 OK in 317ms (Views: 228.1ms | ActiveRecord: 10.3ms | Allocations: 578249)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 10:19:26 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>10, "z"=>8, "message"=>{}}
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5:in `search'
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:6:in `search'
+  [1m[36mMessage Load (1.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+  [1m[36mRemark Load (4.7ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+Completed 200 OK in 907ms (Views: 13.9ms | ActiveRecord: 34.4ms | Allocations: 5464911)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 10:19:48 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>8, "z"=>10, "message"=>{}}
+  [1m[36mMessage Load (2.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5:in `search'
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:6:in `search'
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+  [1m[36mRemark Load (6.5ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:18:in `show'
+Completed 200 OK in 313ms (Views: 19.6ms | ActiveRecord: 13.5ms | Allocations: 1747345)
+
+

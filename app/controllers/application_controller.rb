@@ -2,7 +2,11 @@ class ApplicationController < ActionController::API
     #before_action :authorized
 
     def encode_token(payload)
-        JWT.encode(payload, 'styrofoam')
+        JWT.encode(payload, 'styrofoam', 'HS256')
+    end
+
+    def decode_token(token)
+       JWT.decode(token, 'styrofoam', true, {algorithm: 'HS256'})[0]
     end
 
     def auth_header
