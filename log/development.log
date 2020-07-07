@@ -3411,3 +3411,134 @@ Processing by MessagesController#search as JSON
 Completed 200 OK in 313ms (Views: 19.6ms | ActiveRecord: 13.5ms | Allocations: 1747345)
 
 
+Started POST "/messages/new" for ::1 at 2020-07-07 11:30:11 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"w"=>10, "z"=>8, "message"=>{}}
+  [1m[36mMessage Load (125.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `search'
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5:in `search'
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:17:in `show'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:17:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:17:in `show'
+  [1m[36mRemark Load (1.5ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:17:in `show'
+Completed 200 OK in 1079ms (Views: 11.2ms | ActiveRecord: 136.7ms | Allocations: 5753712)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 11:37:09 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"first_person"=>10, "second_person"=>8, "message"=>{}}
+  [1m[36mMessage Load (1.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `search'
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:11:in `search'
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+  [1m[36mRemark Load (1.5ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+Completed 200 OK in 1193ms (Views: 19.7ms | ActiveRecord: 17.1ms | Allocations: 5756251)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 11:37:24 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"first_person"=>8, "second_person"=>10, "message"=>{}}
+  [1m[36mMessage Load (2.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `search'
+  [1m[36mMessage Load (5.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:11:in `search'
+  [1m[36mMessage Load (4.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+  [1m[36mRemark Load (1.4ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1[0m  [["message_id", 2]]
+  ↳ app/controllers/messages_controller.rb:23:in `show'
+Completed 200 OK in 304ms (Views: 3.5ms | ActiveRecord: 17.4ms | Allocations: 1748511)
+
+
+Started GET "/users" for ::1 at 2020-07-07 11:37:35 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (123.91ms)
+Completed 200 OK in 570ms (Views: 560.1ms | ActiveRecord: 1.6ms | Allocations: 984808)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 11:38:09 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"first_person"=>9, "second_person"=>10, "message"=>{}}
+  [1m[36mMessage Load (2.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 9], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `search'
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:11:in `search'
+Completed 204 No Content in 204ms (ActiveRecord: 3.5ms | Allocations: 387803)
+
+
+Started POST "/messages/new" for ::1 at 2020-07-07 11:39:07 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"first_person"=>9, "second_person"=>10, "message"=>{}}
+  [1m[36mMessage Load (3.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 9], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `search'
+  [1m[36mMessage Load (3.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:11:in `search'
+Completed 500 Internal Server Error in 374ms (ActiveRecord: 109.0ms | Allocations: 1759708)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (User(#70192974736340) expected, got 9 which is an instance of Integer(#70192982211660)):
+  
+app/controllers/messages_controller.rb:4:in `create'
+app/controllers/messages_controller.rb:17:in `search'
+Started POST "/messages/new" for ::1 at 2020-07-07 11:40:29 -0400
+Processing by MessagesController#search as JSON
+  Parameters: {"first_person"=>9, "second_person"=>10, "message"=>{}}
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 9], ["friend_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `search'
+  [1m[36mMessage Load (1.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1 AND "messages"."friend_id" = $2 LIMIT $3[0m  [["user_id", 10], ["friend_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:11:in `search'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (42.6ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "friend_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 9], ["friend_id", 10]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[35m (113.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Message (6.9ms)
+Completed 200 OK in 945ms (Views: 34.5ms | ActiveRecord: 187.3ms | Allocations: 4955443)
+
+
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRemark Create (37.9ms)[0m  [1m[32mINSERT INTO "remarks" ("user_id", "message_id", "body") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 9], ["message_id", 4], ["body", "hello world"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRemark Load (0.5ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1 LIMIT $2[0m  [["message_id", 4], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRemark Load (0.3ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks" WHERE "remarks"."message_id" = $1 LIMIT $2[0m  [["message_id", 4], ["LIMIT", 11]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

@@ -5,9 +5,13 @@ class RemarksController < ApplicationController
         render json: new_remark
     end
 
+    def delete
+        render json: Remark.find(params[:id]).destroy
+    end
+
     private
 
-    def comment_params
+    def remark_params
         params.require(:remark).permit(:body, :message_id, :user_id, :picture)
     end
 
