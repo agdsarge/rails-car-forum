@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
 
     def destroy
-        specific_comment.destroy
+        render json: specific_comment.destroy
     end
 
     private

@@ -19,9 +19,9 @@ class MessagesController < ApplicationController
     end
 
     def show(id=nil)
-        if id #traditional show method. GET "/messages/:id"
+        if id # this way we can show
             render json: Message.find(id).to_json(include: [{user: {only: [:username, :bio, :avatar]}}, {friend: {only: [:username, :bio, :avatar]}},:remarks])
-        else #if i don't know the
+        else #traditional show method. GET "/messages/:id"
             render json: specific_message.to_json(include: [{user: {only: [:username, :bio, :avatar]}}, {friend: {only: [:username, :bio, :avatar]}},:remarks])
         end
     end

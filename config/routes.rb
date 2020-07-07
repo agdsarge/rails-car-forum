@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :remarks, only: [:post]
 
     post '/messages/new', to: 'messages#search'
+    get '/users/my_messages/:id', to: 'users#my_direct_messages'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     namespace :api do
