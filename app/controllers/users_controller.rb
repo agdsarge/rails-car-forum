@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     def my_direct_messages
         user = User.find(params[:id])
         all_mesgs = user.messages + Message.all.select{|m| m.friend == user}
-        render json: all_mesgs
+        render json: all_mesgs.to_json(include: [{user: {only: [:username, :first_name]}}, {friend: {only: [:username, :first_name]}}])
     end
 
 
