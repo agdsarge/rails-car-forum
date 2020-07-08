@@ -10834,3 +10834,322 @@ Processing by Api::V1::AuthController#create as JSON
 Completed 200 OK in 351ms (Views: 1.1ms | ActiveRecord: 14.3ms | Allocations: 7830)
 
 
+Started GET "/" for ::1 at 2020-07-08 10:53:46 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 107.2ms | Allocations: 315)
+Completed 200 OK in 524ms (Views: 274.8ms | ActiveRecord: 0.0ms | Allocations: 1590)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:05:25 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"snabors", "password"=>"[FILTERED]", "auth"=>{"username"=>"snabors", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "snabors"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 279ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1135)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:05:56 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"canikwe", "password"=>"[FILTERED]", "auth"=>{"username"=>"canikwe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "canikwe"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 280ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1034)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:15:41 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:17:34 -0400
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:17:34 -0400
+Completed 500 Internal Server Error in 111889ms (ActiveRecord: 0.0ms | Allocations: 773716)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:17:34 -0400
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:17:34 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `jwt_log_in'
+app/controllers/api/v1/auth_controller.rb:18:in `jwt_log_in'
+Processing by Api::V1::AuthController#jwt_log_in as */*
+Completed 500 Internal Server Error in 2629ms (ActiveRecord: 0.0ms | Allocations: 33361)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `jwt_log_in'
+app/controllers/api/v1/auth_controller.rb:18:in `jwt_log_in'
+Processing by Api::V1::AuthController#jwt_log_in as */*
+Processing by Api::V1::AuthController#jwt_log_in as */*
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.6ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.75ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (25.52ms)
+Completed 200 OK in 723ms (Views: 61.8ms | ActiveRecord: 44.8ms | Allocations: 4173774)
+
+
+Completed 200 OK in 528ms (Views: 192.5ms | ActiveRecord: 41.5ms | Allocations: 3252581)
+
+
+Completed 200 OK in 833ms (Views: 34.5ms | ActiveRecord: 56.1ms | Allocations: 4308601)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:18:08 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (44.63ms)
+Completed 200 OK in 424ms (Views: 225.0ms | ActiveRecord: 4.2ms | Allocations: 436822)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:19:28 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.71ms)
+Completed 200 OK in 201ms (Views: 95.1ms | ActiveRecord: 3.0ms | Allocations: 436821)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:19:54 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (97.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (64.5ms)
+Completed 200 OK in 390ms (Views: 90.6ms | ActiveRecord: 97.6ms | Allocations: 436819)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:20:32 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (126.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (61.26ms)
+Completed 200 OK in 561ms (Views: 208.3ms | ActiveRecord: 126.9ms | Allocations: 439119)
+
+
+Started GET "/users/my_messages/6" for ::1 at 2020-07-08 11:20:50 -0400
+Started GET "/users" for ::1 at 2020-07-08 11:20:50 -0400
+Processing by UsersController#my_direct_messages as */*
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  [1m[36mUser Load (22.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.89ms)
+  ↳ app/controllers/users_controller.rb:13:in `my_direct_messages'
+Completed 200 OK in 185ms (Views: 161.0ms | ActiveRecord: 10.9ms | Allocations: 979566)
+
+
+Completed 404 Not Found in 151ms (ActiveRecord: 22.8ms | Allocations: 904258)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:13:in `my_direct_messages'
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:23:14 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"pnicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"pnicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.3ms)
+Completed 200 OK in 372ms (Views: 36.2ms | ActiveRecord: 2.3ms | Allocations: 537934)
+
+
+Started GET "/users/my_messages/6" for ::1 at 2020-07-08 11:23:29 -0400
+Started GET "/users" for ::1 at 2020-07-08 11:23:29 -0400
+Processing by UsersController#my_direct_messages as */*
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (33.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  ↳ app/controllers/users_controller.rb:13:in `my_direct_messages'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (87.8ms)
+Completed 404 Not Found in 232ms (ActiveRecord: 17.5ms | Allocations: 861412)
+
+
+Completed 200 OK in 289ms (Views: 235.0ms | ActiveRecord: 33.4ms | Allocations: 1034883)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:13:in `my_direct_messages'
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:23:43 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (131.85ms)
+Completed 200 OK in 422ms (Views: 220.2ms | ActiveRecord: 15.3ms | Allocations: 436818)
+
+
+Started GET "/posts" for ::1 at 2020-07-08 11:23:52 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (135.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 905ms (Views: 12.3ms | ActiveRecord: 167.1ms | Allocations: 2617114)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:25:47 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"pnicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"pnicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.56ms)
+Completed 200 OK in 406ms (Views: 33.4ms | ActiveRecord: 2.4ms | Allocations: 410688)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:26:30 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"aduong", "password"=>"[FILTERED]", "auth"=>{"username"=>"aduong", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aduong"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.13ms)
+Completed 200 OK in 335ms (Views: 28.3ms | ActiveRecord: 2.0ms | Allocations: 409789)
+
+
+Started GET "/posts" for ::1 at 2020-07-08 11:26:44 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 285ms (Views: 4.6ms | ActiveRecord: 5.8ms | Allocations: 1104523)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:28:11 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"pnicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"pnicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.54ms)
+Completed 200 OK in 402ms (Views: 36.2ms | ActiveRecord: 1.2ms | Allocations: 409020)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:28:21 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (54.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (102.24ms)
+Completed 200 OK in 472ms (Views: 210.6ms | ActiveRecord: 54.6ms | Allocations: 439067)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:28:53 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (54.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (67.46ms)
+Completed 200 OK in 378ms (Views: 132.2ms | ActiveRecord: 54.8ms | Allocations: 439119)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:32:05 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"aduong", "password"=>"[FILTERED]", "auth"=>{"username"=>"aduong", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aduong"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.68ms)
+Completed 200 OK in 365ms (Views: 51.4ms | ActiveRecord: 1.5ms | Allocations: 409773)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:32:19 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (42.71ms)
+Completed 200 OK in 351ms (Views: 108.1ms | ActiveRecord: 12.8ms | Allocations: 436819)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:32:33 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"aduong", "password"=>"[FILTERED]", "auth"=>{"username"=>"aduong", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aduong"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.94ms)
+Completed 200 OK in 362ms (Views: 25.0ms | ActiveRecord: 1.9ms | Allocations: 409458)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:33:59 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"pnicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"pnicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (76.27ms)
+Completed 200 OK in 487ms (Views: 119.6ms | ActiveRecord: 4.9ms | Allocations: 411615)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:34:04 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (66.39ms)
+Completed 200 OK in 420ms (Views: 154.5ms | ActiveRecord: 4.4ms | Allocations: 436819)
+
+
+Started GET "/posts" for ::1 at 2020-07-08 11:34:34 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 172ms (Views: 6.3ms | ActiveRecord: 4.7ms | Allocations: 1104521)
+
+
+Started GET "/users/my_messages/6" for ::1 at 2020-07-08 11:34:38 -0400
+Started GET "/users" for ::1 at 2020-07-08 11:34:38 -0400
+Processing by UsersController#my_direct_messages as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `my_direct_messages'
+Completed 404 Not Found in 67ms (ActiveRecord: 1.5ms | Allocations: 265353)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:13:in `my_direct_messages'
+Processing by UsersController#index as */*
+  [1m[36mUser Load (22.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (111.23ms)
+Completed 200 OK in 381ms (Views: 326.6ms | ActiveRecord: 22.6ms | Allocations: 844936)
+
+
+Started GET "/users/my_messages/6" for ::1 at 2020-07-08 11:34:48 -0400
+Started GET "/users" for ::1 at 2020-07-08 11:34:48 -0400
+Processing by UsersController#my_direct_messages as */*
+  Parameters: {"id"=>"6"}
+Processing by UsersController#index as */*
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (190.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `my_direct_messages'
+  ↳ app/controllers/users_controller.rb:3:in `index'
+Completed 404 Not Found in 422ms (ActiveRecord: 253.1ms | Allocations: 483315)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:13:in `my_direct_messages'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (112.4ms)
+Completed 200 OK in 1000ms (Views: 959.0ms | ActiveRecord: 16.4ms | Allocations: 2802511)
+
+
