@@ -12067,3 +12067,230 @@ Processing by UsersController#create as JSON
 Completed 200 OK in 522ms (Views: 15.3ms | ActiveRecord: 7.0ms | Allocations: 1462548)
 
 
+Started POST "/api/v1/login" for ::1 at 2020-07-08 13:58:34 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"snabors", "password"=>"[FILTERED]", "auth"=>{"username"=>"snabors", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "snabors"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.84ms)
+Completed 200 OK in 435ms (Views: 15.5ms | ActiveRecord: 11.3ms | Allocations: 473088)
+
+
+Started GET "/users" for ::1 at 2020-07-08 13:58:36 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (194.38ms)
+Completed 200 OK in 296ms (Views: 285.0ms | ActiveRecord: 1.1ms | Allocations: 2104467)
+
+
+Started GET "/posts" for ::1 at 2020-07-08 13:58:51 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (47.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `sort'
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+Completed 200 OK in 789ms (Views: 8.4ms | ActiveRecord: 68.5ms | Allocations: 2617085)
+
+
+Started GET "/posts/10" for ::1 at 2020-07-08 13:58:55 -0400
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:31:in `specific_post'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 10]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 421ms (Views: 2.9ms | ActiveRecord: 9.9ms | Allocations: 2899728)
+
+
+Started PATCH "/comments/19" for ::1 at 2020-07-08 13:59:21 -0400
+Processing by CommentsController#update as JSON
+  Parameters: {"body"=>"Have fun with your newthis is a comment for a test. friends", "picture"=>nil, "id"=>"19", "comment"=>{"body"=>"Have fun with your newthis is a comment for a test. friends", "picture"=>nil}}
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:29:in `specific_comment'
+  [1m[35m (8.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:17:in `update'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:17:in `update'
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:17:in `update'
+  [1m[36mComment Update (1.8ms)[0m  [1m[33mUPDATE "comments" SET "body" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["body", "Have fun with your newthis is a comment for a test. friends"], ["updated_at", "2020-07-08 17:59:22.202667"], ["id", 19]]
+  ↳ app/controllers/comments_controller.rb:17:in `update'
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.04ms)
+Completed 200 OK in 233ms (Views: 7.9ms | ActiveRecord: 33.6ms | Allocations: 1993810)
+
+
+Started GET "/posts/10" for ::1 at 2020-07-08 13:59:28 -0400
+Started GET "/api/v1/token" for ::1 at 2020-07-08 13:59:28 -0400
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (6.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:31:in `specific_post'
+  [1m[36mUser Load (86.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mComment Load (14.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 10]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 200 OK in 474ms (Views: 4.4ms | ActiveRecord: 109.3ms | Allocations: 2456972)
+
+
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.17ms)
+Completed 200 OK in 165ms (Views: 23.7ms | ActiveRecord: 64.9ms | Allocations: 1322808)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 14:00:01 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"body"=>"this is a new comment. it's another test.", "picture"=>"", "user_id"=>9, "post_id"=>10, "comment"=>{"body"=>"this is a new comment. it's another test.", "picture"=>"", "user_id"=>9, "post_id"=>10}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Comment (12.72ms)
+Completed 200 OK in 171ms (Views: 23.3ms | ActiveRecord: 4.8ms | Allocations: 1606945)
+
+
+Started GET "/posts/10" for ::1 at 2020-07-08 14:00:02 -0400
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (7.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:31:in `specific_post'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 10]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 150ms (Views: 4.3ms | ActiveRecord: 11.3ms | Allocations: 1385369)
+
+
+Started GET "/posts/10" for ::1 at 2020-07-08 14:00:04 -0400
+Started GET "/api/v1/token" for ::1 at 2020-07-08 14:00:04 -0400
+Processing by PostsController#show as */*
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (11.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+  ↳ app/controllers/posts_controller.rb:31:in `specific_post'
+  [1m[36mUser Load (49.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.65ms)
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 259ms (Views: 63.2ms | ActiveRecord: 15.8ms | Allocations: 908046)
+
+
+  [1m[36mComment Load (47.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 10]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 437ms (Views: 11.4ms | ActiveRecord: 110.1ms | Allocations: 1852119)
+
+
+Started GET "/posts/10" for ::1 at 2020-07-08 14:00:28 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:31:in `specific_post'
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 10]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 157ms (Views: 3.6ms | ActiveRecord: 12.5ms | Allocations: 1383415)
+
+
+Started GET "/posts/10" for ::1 at 2020-07-08 14:06:10 -0400
+Started GET "/api/v1/token" for ::1 at 2020-07-08 14:06:10 -0400
+Processing by PostsController#show as */*
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (3.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+  ↳ app/controllers/posts_controller.rb:31:in `specific_post'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.51ms)
+Completed 200 OK in 118ms (Views: 58.2ms | ActiveRecord: 10.5ms | Allocations: 911072)
+
+
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 10]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+Completed 200 OK in 302ms (Views: 3.7ms | ActiveRecord: 13.2ms | Allocations: 2003898)
+
+
+Started POST "/users" for ::1 at 2020-07-08 14:06:45 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"wchurchill", "first_name"=>"winston", "last_name"=>"churchill", "email"=>"wchurchill@uk.gov", "zip"=>"00012", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"winston", "last_name"=>"churchill", "username"=>"wchurchill", "email"=>"wchurchill@uk.gov", "password_digest"=>"[FILTERED]", "zip"=>"00012"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "wchurchill"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (21.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "winston"], ["last_name", "churchill"], ["username", "wchurchill"], ["email", "wchurchill@uk.gov"], ["password_digest", "$2a$12$PTl6z7klFEL/zzjQMvZtC.7ZhHk0D1Kui.w6AU6pOgSMrNAnbVsJi"], ["zip", 12], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 18:06:45.571371"], ["updated_at", "2020-07-08 18:06:45.571371"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.38ms)
+Completed 200 OK in 487ms (Views: 20.7ms | ActiveRecord: 37.5ms | Allocations: 1475835)
+
+
+Started POST "/users" for ::1 at 2020-07-08 14:08:14 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"fdr", "first_name"=>"franklin", "last_name"=>"roosevelt", "email"=>"delano@roosevelt.com", "zip"=>"22345", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"franklin", "last_name"=>"roosevelt", "username"=>"fdr", "email"=>"delano@roosevelt.com", "password_digest"=>"[FILTERED]", "zip"=>"22345"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "fdr"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (11.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "franklin"], ["last_name", "roosevelt"], ["username", "fdr"], ["email", "delano@roosevelt.com"], ["password_digest", "$2a$12$QwQIwf.3/10eSgA5pyw.zuqAOdg0nc/pDX.ruTKg5sJpbwMdRSG9m"], ["zip", 22345], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 18:08:14.759036"], ["updated_at", "2020-07-08 18:08:14.759036"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (41.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.88ms)
+Completed 200 OK in 494ms (Views: 19.6ms | ActiveRecord: 55.4ms | Allocations: 1464820)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 14:16:41 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"snabors", "password"=>"[FILTERED]", "auth"=>{"username"=>"snabors", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "snabors"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.55ms)
+Completed 200 OK in 322ms (Views: 20.1ms | ActiveRecord: 2.9ms | Allocations: 470790)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 14:17:14 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (192.33ms)
+Completed 200 OK in 407ms (Views: 287.5ms | ActiveRecord: 3.1ms | Allocations: 438488)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 14:17:30 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (70.18ms)
+Completed 200 OK in 353ms (Views: 178.3ms | ActiveRecord: 6.3ms | Allocations: 436819)
+
+
