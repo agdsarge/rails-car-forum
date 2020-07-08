@@ -10794,3 +10794,43 @@ Processing by MessagesController#search as JSON
 Completed 200 OK in 52ms (Views: 0.4ms | ActiveRecord: 27.3ms | Allocations: 4746)
 
 
+Started GET "/users/my_messages/6" for ::1 at 2020-07-08 10:44:20 -0400
+Started GET "/users" for ::1 at 2020-07-08 10:44:20 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (77.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+Processing by UsersController#my_direct_messages as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (65.78ms)
+Completed 200 OK in 973ms (Views: 764.7ms | ActiveRecord: 3.8ms | Allocations: 15044)
+
+
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `my_direct_messages'
+Completed 404 Not Found in 738ms (ActiveRecord: 75.2ms | Allocations: 11929)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:13:in `my_direct_messages'
+Started POST "/api/v1/login" for ::1 at 2020-07-08 10:50:13 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"p.nicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"p.nicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "p.nicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 185ms (Views: 99.0ms | ActiveRecord: 2.2ms | Allocations: 4883)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 10:50:40 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"pnicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"pnicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 351ms (Views: 1.1ms | ActiveRecord: 14.3ms | Allocations: 7830)
+
+

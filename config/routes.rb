@@ -15,6 +15,7 @@ Rails.application.routes.draw do
             #get '/users/', to: 'users#index'
             post '/login', to: 'auth#create'
             get '/profile', to: 'users#profile'
+            get '/token', to: 'auth#jwt_log_in' 
 
         end
     end
