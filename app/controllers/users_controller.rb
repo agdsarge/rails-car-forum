@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
     def create #WORKS
         new_user = User.new(user_params)
+        new_user.password = params[:password_digest]
         new_user.save
         render json: new_user
     end
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :username, :bio, :zip, :email, :avatar, :password_digest)
+        params.require(:user).permit(:first_name, :last_name, :username, :bio, :zip, :email, :avatar )
     end
 
 end

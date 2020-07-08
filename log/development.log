@@ -11153,3 +11153,917 @@ app/controllers/users_controller.rb:13:in `my_direct_messages'
 Completed 200 OK in 1000ms (Views: 959.0ms | ActiveRecord: 16.4ms | Allocations: 2802511)
 
 
+Started GET "/users/my_messages/6" for ::1 at 2020-07-08 11:41:50 -0400
+Started GET "/users" for ::1 at 2020-07-08 11:41:50 -0400
+Processing by UsersController#my_direct_messages as */*
+  Parameters: {"id"=>"6"}
+Processing by UsersController#index as */*
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  ↳ app/controllers/users_controller.rb:13:in `my_direct_messages'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (114.62ms)
+Completed 404 Not Found in 251ms (ActiveRecord: 28.9ms | Allocations: 1185941)
+
+
+Completed 200 OK in 241ms (Views: 216.7ms | ActiveRecord: 7.3ms | Allocations: 1048060)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:13:in `my_direct_messages'
+Started POST "/api/v1/login" for ::1 at 2020-07-08 11:42:12 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"snabors", "password"=>"[FILTERED]", "auth"=>{"username"=>"snabors", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "snabors"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.25ms)
+Completed 200 OK in 325ms (Views: 20.4ms | ActiveRecord: 1.4ms | Allocations: 411457)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:42:34 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (31.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (100.7ms)
+Completed 200 OK in 546ms (Views: 298.8ms | ActiveRecord: 31.0ms | Allocations: 437591)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:42:53 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (45.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (38.18ms)
+Completed 200 OK in 865ms (Views: 286.6ms | ActiveRecord: 45.8ms | Allocations: 439121)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:42:56 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (308.17ms)
+Completed 200 OK in 560ms (Views: 334.7ms | ActiveRecord: 26.1ms | Allocations: 437570)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:43:29 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (81.26ms)
+Completed 200 OK in 335ms (Views: 130.3ms | ActiveRecord: 12.9ms | Allocations: 439119)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:43:43 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (75.18ms)
+Completed 200 OK in 341ms (Views: 112.7ms | ActiveRecord: 3.8ms | Allocations: 439119)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:49:53 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.71ms)
+Completed 200 OK in 130ms (Views: 38.5ms | ActiveRecord: 13.0ms | Allocations: 498594)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:50:30 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (42.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.75ms)
+Completed 200 OK in 249ms (Views: 64.7ms | ActiveRecord: 42.1ms | Allocations: 436821)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:50:36 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (102.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (83.11ms)
+Completed 200 OK in 417ms (Views: 135.2ms | ActiveRecord: 102.4ms | Allocations: 436819)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:51:43 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (55.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (191.03ms)
+Completed 200 OK in 704ms (Views: 384.5ms | ActiveRecord: 55.6ms | Allocations: 437573)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:53:01 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (140.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (175.22ms)
+Completed 200 OK in 701ms (Views: 390.4ms | ActiveRecord: 140.6ms | Allocations: 439121)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:54:15 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (93.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (63.36ms)
+Completed 200 OK in 720ms (Views: 145.3ms | ActiveRecord: 93.6ms | Allocations: 439120)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:54:32 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.59ms)
+Completed 200 OK in 187ms (Views: 75.3ms | ActiveRecord: 11.7ms | Allocations: 436819)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:54:47 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (23.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (168.9ms)
+Completed 200 OK in 560ms (Views: 237.9ms | ActiveRecord: 23.7ms | Allocations: 436819)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:55:50 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (73.88ms)
+Completed 200 OK in 272ms (Views: 110.8ms | ActiveRecord: 11.0ms | Allocations: 435992)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:56:07 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (61.36ms)
+Completed 200 OK in 541ms (Views: 238.0ms | ActiveRecord: 2.2ms | Allocations: 436821)
+
+
+Started POST "/users" for ::1 at 2020-07-08 11:56:28 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"princess.peach", "first_name"=>"Princess", "last_name"=>"Peach", "email"=>"pp@mario.com", "zip"=>"12345", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"Princess", "last_name"=>"Peach", "username"=>"princess.peach", "email"=>"pp@mario.com", "password_digest"=>"[FILTERED]", "zip"=>"12345"}}
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (9.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Princess"], ["last_name", "Peach"], ["username", "princess.peach"], ["email", "pp@mario.com"], ["password_digest", "password"], ["zip", 12345], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 15:56:29.103397"], ["updated_at", "2020-07-08 15:56:29.103397"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.14ms)
+Completed 200 OK in 554ms (Views: 23.3ms | ActiveRecord: 303.5ms | Allocations: 1523107)
+
+
+Started GET "/users" for ::1 at 2020-07-08 11:56:50 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (69.85ms)
+Completed 200 OK in 137ms (Views: 126.6ms | ActiveRecord: 5.2ms | Allocations: 906412)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 11:58:21 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (61.42ms)
+Completed 200 OK in 453ms (Views: 196.4ms | ActiveRecord: 12.6ms | Allocations: 436819)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:03:01 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (94.05ms)
+Completed 200 OK in 444ms (Views: 198.6ms | ActiveRecord: 5.4ms | Allocations: 439428)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:04:40 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (23.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (115.82ms)
+Completed 200 OK in 584ms (Views: 215.1ms | ActiveRecord: 23.0ms | Allocations: 439121)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:04:48 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (96.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (69.19ms)
+Completed 200 OK in 380ms (Views: 102.8ms | ActiveRecord: 96.8ms | Allocations: 436821)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:05:40 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (65.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (193.88ms)
+Completed 200 OK in 413ms (Views: 254.7ms | ActiveRecord: 65.7ms | Allocations: 439119)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:06:05 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (215.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (29.13ms)
+Completed 200 OK in 671ms (Views: 171.8ms | ActiveRecord: 215.7ms | Allocations: 437922)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:06:57 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (42.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (34.38ms)
+Completed 200 OK in 463ms (Views: 82.0ms | ActiveRecord: 42.6ms | Allocations: 439816)
+
+
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:07:46 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (71.76ms)
+Completed 200 OK in 239ms (Views: 104.9ms | ActiveRecord: 9.4ms | Allocations: 439832)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:08:17 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"mariomario", "first_name"=>"mario", "last_name"=>"mario", "email"=>"mario@mario.com", "zip"=>"23185", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"mario", "last_name"=>"mario", "username"=>"mariomario", "email"=>"mario@mario.com", "password_digest"=>"[FILTERED]", "zip"=>"23185"}}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "mariomario"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (35.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "mario"], ["last_name", "mario"], ["username", "mariomario"], ["email", "mario@mario.com"], ["password_digest", "password"], ["zip", 23185], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:08:17.762388"], ["updated_at", "2020-07-08 16:08:17.762388"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.83ms)
+Completed 200 OK in 300ms (Views: 30.4ms | ActiveRecord: 42.0ms | Allocations: 1443200)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:08:18 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"mariomario", "password"=>"[FILTERED]", "auth"=>{"username"=>"mariomario", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mariomario"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 10.7ms | Allocations: 231395)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started GET "/api/v1/token" for ::1 at 2020-07-08 12:09:33 -0400
+Processing by Api::V1::AuthController#jwt_log_in as */*
+  [1m[36mUser Load (51.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:19:in `jwt_log_in'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.99ms)
+Completed 200 OK in 240ms (Views: 53.2ms | ActiveRecord: 51.7ms | Allocations: 439120)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:10:30 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"bowser", "first_name"=>"bowser", "last_name"=>"koopa", "email"=>"bowser@koopa.com", "zip"=>"12345", "password"=>"[FILTERED]", "user"=>{"first_name"=>"bowser", "last_name"=>"koopa", "username"=>"bowser", "email"=>"bowser@koopa.com", "zip"=>"12345"}}
+  [1m[35m (30.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Started GET "/users" for ::1 at 2020-07-08 12:10:50 -0400
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "bowser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.41ms)
+Completed 200 OK in 19896ms (Views: 14.7ms | ActiveRecord: 37.2ms | Allocations: 82092657)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:10:50 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"bowser", "password"=>"[FILTERED]", "auth"=>{"username"=>"bowser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bowser"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.24ms)
+Completed 200 OK in 65ms (Views: 25.4ms | ActiveRecord: 1.3ms | Allocations: 323784)
+
+
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (67.12ms)
+Completed 200 OK in 137ms (Views: 131.5ms | ActiveRecord: 2.4ms | Allocations: 1052695)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:12:44 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (57.63ms)
+Completed 200 OK in 133ms (Views: 122.1ms | ActiveRecord: 8.3ms | Allocations: 1015324)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:13:37 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"mjordan", "first_name"=>"michael", "last_name"=>"jordan", "email"=>"mjordan@mike.com", "zip"=>"87654", "password"=>"[FILTERED]", "user"=>{"first_name"=>"michael", "last_name"=>"jordan", "username"=>"mjordan", "email"=>"mjordan@mike.com", "zip"=>"87654"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "mjordan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.72ms)
+Completed 200 OK in 143ms (Views: 25.1ms | ActiveRecord: 6.8ms | Allocations: 1186203)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:13:37 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"mjordan", "password"=>"[FILTERED]", "auth"=>{"username"=>"mjordan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mjordan"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.06ms)
+Completed 200 OK in 130ms (Views: 12.5ms | ActiveRecord: 5.2ms | Allocations: 350486)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:13:51 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (89.72ms)
+Completed 200 OK in 163ms (Views: 158.7ms | ActiveRecord: 1.3ms | Allocations: 1015324)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:13:55 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (94.81ms)
+Completed 200 OK in 174ms (Views: 165.3ms | ActiveRecord: 2.1ms | Allocations: 1015324)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:17:22 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"king", "first_name"=>"lebron", "last_name"=>"james", "email"=>"lebron@lakers.com", "zip"=>"41325", "password"=>"[FILTERED]", "user"=>{"first_name"=>"lebron", "last_name"=>"james", "username"=>"king", "email"=>"lebron@lakers.com", "zip"=>"41325"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (8.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "king"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.71ms)
+Completed 200 OK in 292ms (Views: 41.1ms | ActiveRecord: 24.3ms | Allocations: 2378576)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:17:25 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"king", "password"=>"[FILTERED]", "auth"=>{"username"=>"king", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "king"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.73ms)
+Completed 200 OK in 70ms (Views: 36.9ms | ActiveRecord: 1.2ms | Allocations: 455434)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:18:00 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (64.06ms)
+Completed 200 OK in 125ms (Views: 120.9ms | ActiveRecord: 1.1ms | Allocations: 1019631)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:20:17 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"kirving", "first_name"=>"kyrie", "last_name"=>"irving", "email"=>"kyrie@gmail.com", "zip"=>"54321", "password"=>"[FILTERED]", "user"=>{"first_name"=>"kyrie", "last_name"=>"irving", "username"=>"kirving", "email"=>"kyrie@gmail.com", "zip"=>"54321"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "kirving"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.11ms)
+Completed 200 OK in 276ms (Views: 44.1ms | ActiveRecord: 12.2ms | Allocations: 2380088)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:20:20 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"kirving", "password"=>"[FILTERED]", "auth"=>{"username"=>"kirving", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "kirving"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.03ms)
+Completed 200 OK in 84ms (Views: 11.5ms | ActiveRecord: 1.6ms | Allocations: 455433)
+
+
+  [1m[35m (54.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mComment Load (27.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 5]]
+  [1m[35m (29.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (30.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  [1m[36mPost Destroy (40.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 8]]
+  [1m[36mPost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRemark Load (31.0ms)[0m  [1m[34mSELECT "remarks".* FROM "remarks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Destroy (43.3ms)[0m  [1m[31mDELETE FROM "remarks" WHERE "remarks"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Destroy (0.3ms)[0m  [1m[31mDELETE FROM "remarks" WHERE "remarks"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Destroy (0.3ms)[0m  [1m[31mDELETE FROM "remarks" WHERE "remarks"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Destroy (0.3ms)[0m  [1m[31mDELETE FROM "remarks" WHERE "remarks"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Destroy (0.3ms)[0m  [1m[31mDELETE FROM "remarks" WHERE "remarks"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Destroy (0.2ms)[0m  [1m[31mDELETE FROM "remarks" WHERE "remarks"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (51.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "bio", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Paul"], ["last_name", "Nicholsen"], ["username", "pnicholsen"], ["email", "pnicholsen@flatiron.com"], ["password_digest", "$2a$12$uBubVURjvBU3FqFGyE7CteaifC26tLiCS45Wa.iZE7SBIAeketrz6"], ["bio", "I am an instructor at Flatiron School. I like cats."], ["zip", 12345], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:24:28.791921"], ["updated_at", "2020-07-08 16:24:28.791921"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "snabors"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "bio", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Shannon"], ["last_name", "Nabors"], ["username", "snabors"], ["email", "snabors@flatiron.com"], ["password_digest", "$2a$12$gkNEYvwl4cHnAzJ.YYrefu2oNFzGjBvWqi0.FxIwZhLxd0lI13dYa"], ["bio", "I am a software coach at Flatiron School, I like flags."], ["zip", 54321], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:24:29.051296"], ["updated_at", "2020-07-08 16:24:29.051296"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "aduong"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "bio", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Ann"], ["last_name", "Duong"], ["username", "aduong"], ["email", "aduong@flatiron.com"], ["password_digest", "$2a$12$rwUBxkgb1ZXb/xm1SVjF/Oyoj2zn7tCwT1HUdbPD8Hnw6VAF4F2Tq"], ["bio", "I am an instructor at Flatiron School, I like Pokemon."], ["zip", 34251], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:24:29.325095"], ["updated_at", "2020-07-08 16:24:29.325095"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "canikwe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "bio", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Chine"], ["last_name", "Anikwe"], ["username", "canikwe"], ["email", "canikwe@flatiron.com"], ["password_digest", "$2a$12$nVwBEESelicAjbg7NK4AWuvv5vcJcf7ERW7VlfqvluZ0HDWXcvVy2"], ["bio", "I am a former software coach at Flatiron School, I like leaving and abandoning people."], ["zip", 13542], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:24:29.597655"], ["updated_at", "2020-07-08 16:24:29.597655"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("body", "picture", "user_id", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "Not much more to say about it. Leave the compliments below. I know everything."], ["picture", "https://i.pinimg.com/originals/36/a7/c8/36a7c8ac9a4d58e3c37543b07dd5979b.jpg"], ["user_id", 14], ["subject", "I have this excellent car, and I just wanted to brag about it."], ["created_at", "2020-07-08 16:24:29.646215"], ["updated_at", "2020-07-08 16:24:29.646215"]]
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("body", "picture", "user_id", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "See you later, alligators!."], ["picture", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2019-chevrolet-camaro-zl1-1le-comparison-105-1581425382.jpg?crop=0.825xw:0.620xh;0.147xw,0.356xh&resize=1200:*"], ["user_id", 17], ["subject", "I like a good Camaro, because I can get away fast"], ["created_at", "2020-07-08 16:24:29.692793"], ["updated_at", "2020-07-08 16:24:29.692793"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (20.9ms)[0m  [1m[32mINSERT INTO "comments" ("body", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "You're very strange, Paul."], ["user_id", 15], ["post_id", 9], ["created_at", "2020-07-08 16:24:29.699535"], ["updated_at", "2020-07-08 16:24:29.699535"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("body", "picture", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "I like the Pikachu car more"], ["picture", "https://i.redd.it/9d1khmlnj5r21.jpg"], ["user_id", 16], ["post_id", 9], ["created_at", "2020-07-08 16:24:29.724908"], ["updated_at", "2020-07-08 16:24:29.724908"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("body", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "You are also strange, Ann."], ["user_id", 14], ["post_id", 9], ["created_at", "2020-07-08 16:24:29.730826"], ["updated_at", "2020-07-08 16:24:29.730826"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("body", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Have fun with your new friends"], ["user_id", 15], ["post_id", 10], ["created_at", "2020-07-08 16:24:29.736257"], ["updated_at", "2020-07-08 16:24:29.736257"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "friend_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 14], ["friend_id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "friend_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 17], ["friend_id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Create (0.3ms)[0m  [1m[32mINSERT INTO "remarks" ("user_id", "message_id", "body", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 14], ["message_id", 6], ["body", "Hey Ann. This is a formal notice that cats are better than Pokemon."], ["picture", "https://static01.nyt.com/images/2010/06/14/business/sub-jp-burger-2/sub-jp-burger-2-popup.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Create (0.2ms)[0m  [1m[32mINSERT INTO "remarks" ("user_id", "message_id", "body", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 16], ["message_id", 6], ["body", "What about pokemon that are cats? Like Persian."], ["picture", "https://www.serebii.net/swordshield/pokemon/053.png"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Create (0.3ms)[0m  [1m[32mINSERT INTO "remarks" ("user_id", "message_id", "body") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 14], ["message_id", 6], ["body", "Yeah they're cool I guess."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Create (0.3ms)[0m  [1m[32mINSERT INTO "remarks" ("user_id", "message_id", "body") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 17], ["message_id", 7], ["body", "Let's get brunch after the pandemic."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRemark Create (0.4ms)[0m  [1m[32mINSERT INTO "remarks" ("user_id", "message_id", "body", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 15], ["message_id", 7], ["body", "Okay. I will drive there in my truck, because that is what I drive."], ["picture", "https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/users" for ::1 at 2020-07-08 12:27:56 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"sgamgee", "first_name"=>"samwise", "last_name"=>"gamgee", "email"=>"sgamgee@shire.com", "zip"=>"14253", "password"=>"[FILTERED]", "user"=>{"first_name"=>"samwise", "last_name"=>"gamgee", "username"=>"sgamgee", "email"=>"sgamgee@shire.com", "zip"=>"14253"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "sgamgee"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "sgamgee"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ (byebug):1:in `create'
+Completed 500 Internal Server Error in 109526ms (ActiveRecord: 9.8ms | Allocations: 442692)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/users" for ::1 at 2020-07-08 12:30:10 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"sgamgee", "first_name"=>"samwise", "last_name"=>"gamgee", "email"=>"sgamgee@shire.com", "zip"=>"23185", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"samwise", "last_name"=>"gamgee", "username"=>"sgamgee", "email"=>"sgamgee@shire.com", "password_digest"=>"[FILTERED]", "zip"=>"23185"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "sgamgee"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "samwise"], ["last_name", "gamgee"], ["username", "sgamgee"], ["email", "sgamgee@shire.com"], ["password_digest", "password"], ["zip", 23185], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:30:12.718640"], ["updated_at", "2020-07-08 16:30:12.718640"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (44.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 7556ms (ActiveRecord: 56.4ms | Allocations: 1869945)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:30:21 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"sgamgee", "password"=>"[FILTERED]", "auth"=>{"username"=>"sgamgee", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sgamgee"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 1.1ms | Allocations: 244701)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started GET "/users" for ::1 at 2020-07-08 12:32:44 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.82ms)
+Completed 200 OK in 1013ms (Views: 793.8ms | ActiveRecord: 10.1ms | Allocations: 3254694)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:33:18 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"fbaggins", "first_name"=>"frodo", "last_name"=>"baggins", "email"=>"frodo@shire.net", "zip"=>"61524", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"frodo", "last_name"=>"baggins", "username"=>"fbaggins", "email"=>"frodo@shire.net", "password_digest"=>"[FILTERED]", "zip"=>"61524"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (10.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "fbaggins"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (18.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "frodo"], ["last_name", "baggins"], ["username", "fbaggins"], ["email", "frodo@shire.net"], ["password_digest", "password"], ["zip", 61524], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:33:19.112550"], ["updated_at", "2020-07-08 16:33:19.112550"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.73ms)
+Completed 200 OK in 191ms (Views: 19.9ms | ActiveRecord: 31.6ms | Allocations: 1500564)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:33:19 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"fbaggins", "password"=>"[FILTERED]", "auth"=>{"username"=>"fbaggins", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fbaggins"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 1.3ms | Allocations: 308318)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started GET "/users" for ::1 at 2020-07-08 12:35:56 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (83.18ms)
+Completed 200 OK in 159ms (Views: 151.9ms | ActiveRecord: 1.1ms | Allocations: 1015324)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:36:26 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"ptook", "first_name"=>"pippin", "last_name"=>"took", "email"=>"ptook@shire.net", "zip"=>"14235", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"pippin", "last_name"=>"took", "username"=>"ptook", "email"=>"ptook@shire.net", "password_digest"=>"[FILTERED]", "zip"=>"14235"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "ptook"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "pippin"], ["last_name", "took"], ["username", "ptook"], ["email", "ptook@shire.net"], ["password_digest", "password"], ["zip", 14235], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:36:26.977940"], ["updated_at", "2020-07-08 16:36:26.977940"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.29ms)
+Completed 200 OK in 170ms (Views: 26.8ms | ActiveRecord: 5.5ms | Allocations: 1443269)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:36:27 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"ptook", "password"=>"[FILTERED]", "auth"=>{"username"=>"ptook", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ptook"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.7ms | Allocations: 229726)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2020-07-08 12:37:30 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"mbrandy", "first_name"=>"merry", "last_name"=>"brandybuck", "email"=>"mbrandy@shire.net", "zip"=>"19283", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"merry", "last_name"=>"brandybuck", "username"=>"mbrandy", "email"=>"mbrandy@shire.net", "password_digest"=>"[FILTERED]", "zip"=>"19283"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "mbrandy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "merry"], ["last_name", "brandybuck"], ["username", "mbrandy"], ["email", "mbrandy@shire.net"], ["password_digest", "password"], ["zip", 19283], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:37:31.136684"], ["updated_at", "2020-07-08 16:37:31.136684"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.02ms)
+Completed 200 OK in 166ms (Views: 22.4ms | ActiveRecord: 5.1ms | Allocations: 1445026)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:37:31 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"mbrandy", "password"=>"[FILTERED]", "auth"=>{"username"=>"mbrandy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mbrandy"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 2.0ms | Allocations: 232001)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2020-07-08 12:40:35 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"mcgwire", "first_name"=>"Mark", "last_name"=>"McGwire", "email"=>"mgwire@cards.com", "zip"=>"09823", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"Mark", "last_name"=>"McGwire", "username"=>"mcgwire", "email"=>"mgwire@cards.com", "password_digest"=>"[FILTERED]", "zip"=>"09823"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "mcgwire"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (27.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Mark"], ["last_name", "McGwire"], ["username", "mcgwire"], ["email", "mgwire@cards.com"], ["password_digest", "password"], ["zip", 9823], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:40:35.691071"], ["updated_at", "2020-07-08 16:40:35.691071"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.44ms)
+Completed 200 OK in 188ms (Views: 21.8ms | ActiveRecord: 32.1ms | Allocations: 1443189)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:40:35 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"mcgwire", "password"=>"[FILTERED]", "auth"=>{"username"=>"mcgwire", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mcgwire"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 1.3ms | Allocations: 229727)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:42:07 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"fbaggins", "password"=>"[FILTERED]", "auth"=>{"username"=>"fbaggins", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fbaggins"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 1.5ms | Allocations: 229725)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:42:23 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"pnicholsen", "password"=>"[FILTERED]", "auth"=>{"username"=>"pnicholsen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pnicholsen"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.27ms)
+Completed 200 OK in 576ms (Views: 265.9ms | ActiveRecord: 1.2ms | Allocations: 1602626)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:44:11 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (130.34ms)
+Completed 200 OK in 224ms (Views: 205.9ms | ActiveRecord: 12.6ms | Allocations: 1342066)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:45:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (162.66ms)
+Completed 200 OK in 614ms (Views: 421.2ms | ActiveRecord: 17.6ms | Allocations: 3898695)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:47:14 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"sosa", "first_name"=>"sammy", "last_name"=>"sosa", "email"=>"ssosa@cubs.com", "zip"=>"16253", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"sammy", "last_name"=>"sosa", "username"=>"sosa", "email"=>"ssosa@cubs.com", "password_digest"=>"[FILTERED]", "zip"=>"16253"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "sosa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (23.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "sammy"], ["last_name", "sosa"], ["username", "sosa"], ["email", "ssosa@cubs.com"], ["password_digest", "$2a$12$2NGR8qGog94CuQ4vU9ub8.rDKsElYpB3mPGDiBuBiZu9Iby1FUAUe"], ["zip", 16253], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:47:17.564820"], ["updated_at", "2020-07-08 16:47:17.564820"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.91ms)
+Completed 200 OK in 631ms (Views: 53.0ms | ActiveRecord: 35.8ms | Allocations: 2702343)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:47:17 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"sosa", "password"=>"[FILTERED]", "auth"=>{"username"=>"sosa", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sosa"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.02ms)
+Completed 200 OK in 382ms (Views: 10.7ms | ActiveRecord: 3.2ms | Allocations: 470833)
+
+
+Started GET "/users" for ::1 at 2020-07-08 12:47:22 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (107.76ms)
+Completed 200 OK in 189ms (Views: 173.3ms | ActiveRecord: 1.4ms | Allocations: 1523840)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:49:19 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"bpitt", "first_name"=>"brad", "last_name"=>"pitt", "email"=>"bradpitt@movies.com", "zip"=>"98765", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"brad", "last_name"=>"pitt", "username"=>"bpitt", "email"=>"bradpitt@movies.com", "password_digest"=>"[FILTERED]", "zip"=>"98765"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "bpitt"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "brad"], ["last_name", "pitt"], ["username", "bpitt"], ["email", "bradpitt@movies.com"], ["password_digest", "$2a$12$hIB.ta9Pio5BZXIPocqYQORVf7Qmwb4.ZsTSJxqTD70wz3V.IfKAm"], ["zip", 98765], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:49:20.251811"], ["updated_at", "2020-07-08 16:49:20.251811"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.94ms)
+Completed 200 OK in 727ms (Views: 41.8ms | ActiveRecord: 12.7ms | Allocations: 1471680)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:49:20 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"bpitt", "password"=>"[FILTERED]", "auth"=>{"username"=>"bpitt", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bpitt"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.0ms)
+Completed 200 OK in 344ms (Views: 17.7ms | ActiveRecord: 4.2ms | Allocations: 416529)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:50:35 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"qtaran", "first_name"=>"quentin", "last_name"=>"tarantino", "email"=>"qtaran@hollywood.com", "zip"=>"19283", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"quentin", "last_name"=>"tarantino", "username"=>"qtaran", "email"=>"qtaran@hollywood.com", "password_digest"=>"[FILTERED]", "zip"=>"19283"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "qtaran"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (21.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "quentin"], ["last_name", "tarantino"], ["username", "qtaran"], ["email", "qtaran@hollywood.com"], ["password_digest", "$2a$12$ZGSLyKh0BWLL10mCiiVcw.6DSnyh/tnklRLwRArH8X5O2mMokNirC"], ["zip", 19283], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:50:38.725866"], ["updated_at", "2020-07-08 16:50:38.725866"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (16.79ms)
+Completed 200 OK in 610ms (Views: 51.6ms | ActiveRecord: 41.4ms | Allocations: 2693610)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:50:38 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"qtaran", "password"=>"[FILTERED]", "auth"=>{"username"=>"qtaran", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "qtaran"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.28ms)
+Completed 200 OK in 335ms (Views: 24.2ms | ActiveRecord: 12.6ms | Allocations: 542423)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:51:55 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"batman", "first_name"=>"bruce", "last_name"=>"wayne", "email"=>"notbruce@wayne.com", "zip"=>"45678", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"bruce", "last_name"=>"wayne", "username"=>"batman", "email"=>"notbruce@wayne.com", "password_digest"=>"[FILTERED]", "zip"=>"45678"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (8.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "batman"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "bruce"], ["last_name", "wayne"], ["username", "batman"], ["email", "notbruce@wayne.com"], ["password_digest", "$2a$12$xWuSDZyHwFRrvuC1d5xPfezWNiM2r3tw3IBu9OCvpZlyvAJhkVafG"], ["zip", 45678], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:51:55.999540"], ["updated_at", "2020-07-08 16:51:55.999540"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.23ms)
+Completed 200 OK in 763ms (Views: 53.4ms | ActiveRecord: 21.4ms | Allocations: 1465616)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:51:56 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"batman", "password"=>"[FILTERED]", "auth"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "batman"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.8ms)
+Completed 200 OK in 502ms (Views: 21.3ms | ActiveRecord: 3.9ms | Allocations: 410240)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-08 12:52:41 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"batman", "password"=>"[FILTERED]", "auth"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "batman"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.13ms)
+Completed 200 OK in 320ms (Views: 18.8ms | ActiveRecord: 2.4ms | Allocations: 407997)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:56:59 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"superman", "first_name"=>"clark", "last_name"=>"kent", "email"=>"clark@kent.com", "zip"=>"45632", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"clark", "last_name"=>"kent", "username"=>"superman", "email"=>"clark@kent.com", "password_digest"=>"[FILTERED]", "zip"=>"45632"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "superman"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (44.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "clark"], ["last_name", "kent"], ["username", "superman"], ["email", "clark@kent.com"], ["password_digest", "$2a$12$z.dw3/IoOLn3dV8Y7Lo6POGlz6VPeFXs5XpWcdYEF7gp.yGcHyfc."], ["zip", 45632], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:56:59.991843"], ["updated_at", "2020-07-08 16:56:59.991843"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.44ms)
+Completed 200 OK in 634ms (Views: 39.2ms | ActiveRecord: 51.7ms | Allocations: 1464850)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:58:46 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"glucas", "first_name"=>"george", "last_name"=>"lucas", "email"=>"glucas@film.net", "zip"=>"99087", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"george", "last_name"=>"lucas", "username"=>"glucas", "email"=>"glucas@film.net", "password_digest"=>"[FILTERED]", "zip"=>"99087"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "glucas"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "george"], ["last_name", "lucas"], ["username", "glucas"], ["email", "glucas@film.net"], ["password_digest", "$2a$12$xSnE4liZ6V4JCUt1zLikEujlpm8iGLnwyey4s3Z.NFlHc4tbuHgfq"], ["zip", 99087], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:58:47.011338"], ["updated_at", "2020-07-08 16:58:47.011338"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.1ms)
+Completed 200 OK in 463ms (Views: 20.9ms | ActiveRecord: 6.0ms | Allocations: 1462546)
+
+
+Started POST "/users" for ::1 at 2020-07-08 12:59:23 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"username"=>"princess.peach", "first_name"=>"Princess", "last_name"=>"Peach", "email"=>"pp@mario.com", "zip"=>"23185", "password_digest"=>"[FILTERED]", "user"=>{"first_name"=>"Princess", "last_name"=>"Peach", "username"=>"princess.peach", "email"=>"pp@mario.com", "password_digest"=>"[FILTERED]", "zip"=>"23185"}}
+[31mUnpermitted parameter: :password_digest[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "princess.peach"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "zip", "avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Princess"], ["last_name", "Peach"], ["username", "princess.peach"], ["email", "pp@mario.com"], ["password_digest", "$2a$12$IvYzmfOKbUd/VWOZZ2akyeVI/2kkqpmCC/7Qc53ZL5xo3mmkWgiYy"], ["zip", 23185], ["avatar", "../assets/default-avatar.png"], ["created_at", "2020-07-08 16:59:24.288116"], ["updated_at", "2020-07-08 16:59:24.288116"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.97ms)
+Completed 200 OK in 522ms (Views: 15.3ms | ActiveRecord: 7.0ms | Allocations: 1462548)
+
+
